@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity implements
     private TextView longi;
     private TextView lat;
     private Location mLastLocation;
-    private Button btnClick;
+//    private Button btnClick;
 
     public MainActivity() {
         inst = this;
@@ -72,31 +72,31 @@ public class MainActivity extends AppCompatActivity implements
                 }
             }
         });
-        btnClick.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (checkPlayServices())
-                    AppController.getInstance().getGoogleApiClient().connect();
-            }
-        });
+//        btnClick.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (checkPlayServices())
+//                    AppController.getInstance().getGoogleApiClient().connect();
+//            }
+//        });
     }
 
-    private boolean checkPlayServices() {
-        int resultCode = GooglePlayServicesUtil.isGooglePlayServicesAvailable(MainActivity.instance());
-        if (resultCode != ConnectionResult.SUCCESS) {
-            if (GooglePlayServicesUtil.isUserRecoverableError(resultCode)) {
-                GooglePlayServicesUtil.getErrorDialog(resultCode, MainActivity.instance(),
-                        PLAY_SERVICES_RESOLUTION_REQUEST).show();
-            } else {
-                Toast.makeText(MainActivity.instance(),
-                        "This device is not supported.", Toast.LENGTH_LONG)
-                        .show();
-                MainActivity.instance().finish();
-            }
-            return false;
-        }
-        return true;
-    }
+//    private boolean checkPlayServices() {
+//        int resultCode = GooglePlayServicesUtil.isGooglePlayServicesAvailable(MainActivity.instance());
+//        if (resultCode != ConnectionResult.SUCCESS) {
+//            if (GooglePlayServicesUtil.isUserRecoverableError(resultCode)) {
+//                GooglePlayServicesUtil.getErrorDialog(resultCode, MainActivity.instance(),
+//                        PLAY_SERVICES_RESOLUTION_REQUEST).show();
+//            } else {
+//                Toast.makeText(MainActivity.instance(),
+//                        "This device is not supported.", Toast.LENGTH_LONG)
+//                        .show();
+//                MainActivity.instance().finish();
+//            }
+//            return false;
+//        }
+//        return true;
+//    }
 
     private void checkPermissions() {
         int permissionCheckReceive = ContextCompat.checkSelfPermission(this, Manifest.permission.RECEIVE_SMS);
@@ -111,7 +111,7 @@ public class MainActivity extends AppCompatActivity implements
         btnRegister = (Button) findViewById(R.id.btnRegister);
         longi = (TextView) findViewById(R.id.longitude);
         lat = (TextView) findViewById(R.id.latitude);
-        btnClick = (Button) findViewById(R.id.btnClick);
+//        btnClick = (Button) findViewById(R.id.btnClick);
     }
 
     @Override

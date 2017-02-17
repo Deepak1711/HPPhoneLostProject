@@ -18,6 +18,8 @@ import android.widget.Toast;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 
+import java.util.ArrayList;
+
 /**
  * Created on 2/2/17.
  */
@@ -53,21 +55,21 @@ public class SmsBroadCastReceiver extends BroadcastReceiver {
     }
 
     public void onMessageReceived(String address, String smsBody, Context context) {
-//        ArrayList<String> str = s.fetchContacts();
-//        str.add(0, "+91" + str.get(0));
-//        str.add(1, "+91" + str.get(1));
-//        if (address.equals(str.get(0)) || address.equals(str.get(1))) {
-//            if (smsBody.toString().equals(R.string.msg1)) {
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-//            turnOnFlashLight(context);
-//        }
-        turnToGeneral(context);
-        if (checkPlayServices())
-            AppController.getInstance().getGoogleApiClient().connect();
-//            } else if (smsBody.toString().equals(R.string.msg2)) {
+        ArrayList<String> str = s.fetchContacts();
+        str.add(0, "+91" + str.get(0));
+        str.add(1, "+91" + str.get(1));
+        if (address.equals(str.get(0)) || address.equals(str.get(1))) {
+            if (smsBody.toString().equals(R.string.msg1)) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    turnOnFlashLight(context);
+                }
+                turnToGeneral(context);
+                if (checkPlayServices())
+                    AppController.getInstance().getGoogleApiClient().connect();
+            } else if (smsBody.toString().equals(R.string.msg2)) {
 
-//            }
-//        }
+            }
+        }
     }
 
     private boolean checkPlayServices() {
