@@ -58,10 +58,10 @@
         android:layout_marginTop="@dimen/twenty"
         android:hint="longitude" />
 
-    <Button
-        android:id="@+id/btnClick"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/longitude"
-        android:text="click" />
+    <!--<Button-->
+        <!--android:id="@+id/btnClick"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@+id/longitude"-->
+        <!--android:text="click" />-->
 </RelativeLayout>
