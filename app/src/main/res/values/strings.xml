@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">HPPhoneLostProject</string>
+    <string name="Contact1">Contact 1</string>
+    <string name="Contact2">Contact 2</string>
+    <string name="Register">Register</string>
+    <string name="contactRegistered">Emergency Contact Registered</string>
+    <string name="msg2">msg2</string>
+    <string name="msg1">msg1</string>
+</resources>
